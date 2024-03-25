@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ul,ol태그</title>
+        <style>
+            /*ul{list-style: none;} : 블릿 사라짐*/
+            /* disc-채워진원, circle-빈원, square-사각, */
+            /* ul{list-style-type: circle;} */
+            /* 블릿에 이미지 넣기 */
+            #u1 { list-style-image: url(b1.JPG);}
+            /* lower-roman,upper=roman :로마자
+               lower-alpha,upper-alpha : 영문자
+               */
+            #o1 {list-style-type: lower-alpha;}
+        </style>
+    </head>
+</html>
+
+<ul>
+    <li>1일차
+        <ol type="a">
+            <li>해녀박물관</li>
+            <li>낚시체험</li>
+        </ol>
+    </li>
+    <li>2일차
+        <ol type="a" start
+        ="3">
+            <li>용눈이오름</li>    
+            <li>만장굴</li>
+            <li>카약체험</li>
+        </ol start>   
+    </li>
+</ul>
