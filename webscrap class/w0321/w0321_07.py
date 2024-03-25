@@ -14,7 +14,10 @@ print("순위 : ",td_list[0].text)
 print("종목명 : ",td_list[1].find("a").text)
 print("검색비율 : ",td_list[2].text)
 print("현재가 : ",td_list[3].text)
+print("PER : ",td_list[10].text)
+print("ROE : ",td_list[11].text)
 
+# 타입 - list타입
 print(len(tr_list))
 # print(tr_list[2])
 # with open("stock.html","w",encoding="utf8") as f:
