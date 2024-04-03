@@ -17,13 +17,21 @@
         animation-delay: 1s;
         */
         /*이름,시간,지연시간,반복,방향*/
-        animation: move 3s 3s infinite alternate ease-in;}
-       
+        animation: move 3s ease-in 0s infinite alternate,rotate 1s infinite alternate ; ;}
         
+       
+        @keyframes rotate{
+            from{transform: rotate(0);}
+            to{transform: rotate(360deg);}
+        }
         @keyframes move{
-            from{background: blue; border: 3px solid black;}    /*어디서부터*/
+            from{background: blue; border: 3px solid black;
+            transform: translate(0,0);
+            }    /*어디서부터*/
             to{background: blueviolet; border: 1px solid pink;
-            border-radius: 50%;}       /*어디까지*/
+            border-radius: 50%;
+            
+            transform: translate(400px,0);}       /*어디까지*/
         }
     </style>
 </head>

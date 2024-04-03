@@ -67,6 +67,13 @@
     font-weight: 600; line-height: 45px; text-align: center; }
         .e_img1{ background: url('imgs/L2024031914103461580_00.jpg') -36px -15px no-repeat;
                  background-size: 120%; }
+        .e_img:hover{animation: img_zoom 1s; 
+                    animation-fill-mode: forwards;}
+        
+        @keyframes img_zoom{
+            from{background-size: 120%;}
+            to{background-size: 140%; background-position: -80px -45px;}
+        }
         .e_img2{ background: url('imgs/L2023071017281318970_00.jpg') -36px -15px no-repeat;
                  background-size: 120%;}
         .e_img3{ background: url('imgs/L2024020816060892970_00.jpg') -36px -15px no-repeat;
@@ -156,16 +163,16 @@
                         </div>
                     </div>
                     <div class="econt">
-                        <div class="econt1 e_img2">
+                        <div class="econt1 e_img e_img2">
                             <div>이벤트</div>
                         </div>
-                        <div class="econt2">
+                        <div class="econt2 e_img">
                             <p class="tit">[4월] 행복이 피어나는 블루밍 리솜</p>
                             <p class="tit2">이용기간 : 2024.04.05~2024.04.30</p>
                         </div>
                     </div>
                     <div class="econt">
-                        <div class="econt1 e_img3">
+                        <div class="econt1 e_img e_img3">
                             <div>이벤트</div>
                         </div>
                         <div class="econt2">

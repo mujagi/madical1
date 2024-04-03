@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; text-align: center;}
+        section{display: flex;}
+        header{width: 100%; height: 200px; background: steelblue;}
+        .left{width: 60%; height: 600px;  display: flex; justify-content: space-around;}
+        .left .l01{width: 33%; background: tan;}
+        .left .l02{width: 33%; background: yellow;}
+        .left .l03{width: 34%; background: red;}
+        .right{width: 40%; height: 600px; background: khaki;}
+        footer{width: 100%; height: 300px; background: lavender;}
+
+        @media screen and (max-width:1600px) {
+            
+            .left .l01{background: blue;}}
+        @media screen and (max-width:1200px) {
+            
+            .left .l01{background: green;}}
+        @media screen and (max-width:1000px) {
+            .right{display: none;}
+            .left .l01{background: pink;}
+            .left .l03{display: none;}}
+        @media screen and (max-width:800px) {
+            .right{display: none;}
+            .left .l01{background: aqua; width: 100%;}
+            .left .l02{display: none;}}
+    </style>
+</head>
+<body>
+    <header></header>
+    <section>
+        <div class="left">
+            <div class="l01"></div>
+            <div class="l02"></div>
+            <div class="l03"></div>
+        </div>
+        <div class="right"></div>
+    </section>
+    <footer></footer>  
+</body>
+</html>
