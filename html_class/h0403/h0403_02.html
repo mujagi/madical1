@@ -6,13 +6,19 @@
     <title>변형</title>
     <style>
         *{margin: 0 ; padding: 0;}
-        .main,.main2,.main3,.main4{width: 1000px; height: 500px; margin: 0 auto; border: 1px solid black;
-        display: flex; justify-content: space-around; align-items: center;}
+        .main,.main2,.main3,.main4,.main5{width: 1000px; height: 500px; margin: 0 auto; border: 1px solid black;
+        display: flex; justify-content: space-around; align-items: center;}.main4 .c{width: 200px; height: 200px; border: 1px solid black;}
+        .main5{perspective: 500px;}
+        .main5 .c1:hover{transform:skewX(-30deg) ; transform-origin: right bottom;}
+        .main5 .c2:hover{transform:skewY(15deg) ;}
+        .main5 .c3:hover{transform:skew(-25deg,-15deg);}
+        
         .main4 .c{width: 200px; height: 200px; border: 1px solid black;}
+        .main4{perspective: 500px;}
         .main4 .c1:hover{transform:rotateX(45deg) ; perspective: 120px;
         perspective-origin: 20px;}
         .main4 .c2:hover{transform:rotateY(45deg) ;}
-        .main4 .c3:hover{transform:rotateZ(45deg) ;}
+        .main4 .c3:hover{transform:scaleZ(2);}
         /* transform:rotate 회전*/
         .main3 .c{width: 200px; height: 200px; border: 1px solid black;}
         .main3 .c1:hover{transform:rotate(20deg) ;}
@@ -33,6 +39,17 @@
     </style>
 </head>
 <body>
+    <div class="main5"> 
+        <div class="c c1">
+            <img src="images/car2.jpg" >
+        </div>
+        <div class="c c2">
+            <img class="img01" src="images/car2.jpg" >
+        </div>
+        <div class="c c3">
+            <img src="images/car2.jpg" >
+        </div>
+    </div>
     <div class="main4"> 
         <div class="c c1">
             <img src="images/car2.jpg" >
