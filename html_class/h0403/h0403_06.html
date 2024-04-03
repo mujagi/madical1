@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>애니메이션</title>
+    <style>
+        div{width: 100px; height: 100px;
+        background: blue; border: 3px solid black;
+        /*
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: 1; 횟수만큼 진행, infinite
+        animation-direction: alternate;normal,alternate-역방향
+        animation-timing-function: ease-in;진행속도
+        animation-fill-mode: forwards;종료 후 스타일지정
+        animation-delay: 1s;
+        */
+        /*이름,시간,지연시간,반복,방향*/
+        animation: move 3s 3s infinite alternate ease-in;}
+       
+        
+        @keyframes move{
+            from{background: blue; border: 3px solid black;}    /*어디서부터*/
+            to{background: blueviolet; border: 1px solid pink;
+            border-radius: 50%;}       /*어디까지*/
+        }
+    </style>
 </head>
 <body>
-    
+    <div></div>
 </body>
 </html>
