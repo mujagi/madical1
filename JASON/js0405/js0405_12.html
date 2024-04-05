@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈</title>
+    <script>
+        //숫자 3개를 입력받아, 큰순서대로 출력하세요
+        var num1 = Number(prompt("첫번째 숫자를 입력하시오"));
+        var num2 = Number(prompt("두번째 숫자를 입력하시오"));
+        var num3 = Number(prompt("세번째 숫자를 입력하시오"));
+        var max_no = Math.max(num1,num2,num3);
+        var min_no = Math.min(num1,num2,num3);
+        var middle_no = (num1+num2+num3)-(max_no+min_no); // 중간값  찾기
+        document.write("최대값 : ",max_no,"<br>");
+        document.write("최소값 : ",min_no,"<br>");
+        document.write("큰 순서대로 : ",max_no,",",middle_no,",",min_no,"<br>");
+
+        var arr=[num1,num2,num3];
+        document.write(arr.sort(),"<br>");
+        document.write(arr.reverse(),"<br>");
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

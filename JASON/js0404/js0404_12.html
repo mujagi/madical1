@@ -13,7 +13,7 @@
         // 1-100의 랜덤숫자를 맞추기 입력한 숫자보다 크면 큰수를 입력하세요,작은면 작은수
         var ran=Math.floor(Math.random()*100)+1;
         var num=prompt("숫자를 입력하세요");
-        var result= (num<=ran)? (num==ran)?"입력한 수와 같습니다.":"입력한 수가 더 작습니다.": "입력한 수가 더 큽니다.";
+        var result= (num<=ran)? ((num==ran)?"입력한 수와 같습니다.":"입력한 수가 더 작습니다."): "입력한 수가 더 큽니다.";
         document.write(result+"<br>"+ran)
         /*if(num>ran){
             document.write("랜덤숫자보다 입력 숫자가 더 큽니다"+"<br>");

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue</title>
+    <script>
+        //1-100
+        var random_no=Math.floor(Math.random()*100)+1;
+        //랜덤숫자 맞추기
+        //5번까지 도전하게, 이후 랜덤숫자 출력
+        //그 전에 맞추면 그전에 출력
+        // for 문 사용해서
+        var temp=0;
+        for(var i=0;i<5;i++){
+            var num = Number(prompt("숫자를 입력해주세요"));
+            if(num==random_no){
+                temp=1;
+                break;
+            }
+        }
+        if(temp==0){
+            document.write("5번 도전에 실패했습니다"+"<br>"+"정답 숫자는 :"+random_no);  
+        }
+        else{
+            document.write("정답을 맞췄습니다"+"<br>"+random_no);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
