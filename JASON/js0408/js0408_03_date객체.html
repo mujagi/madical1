@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 정보</title>
+    <style>
+        *{margin: 0; padding: 0;}
+    </style>
+    <script>
+        document.write("<h2>10월 31일 까지 남은 일,시간,분,초</h2>")
+        var d_day =new Date(2024,9,31);
+        var d_year = d_day.getFullYear();
+        var d_month = d_day.getMonth();
+        var d_date = d_day.getDate() ;
+        var now_day = d_day.getDay();
+        var f_day;
+        switch(now_day){
+            case 0: f_day = "일요일";
+            break;
+            case 1: f_day = "월요일";
+            break;
+            case 2: f_day = "화요일";
+            break;
+            case 3: f_day = "수요일";
+            break;
+            case 4: f_day = "목요일";
+            break;
+            case 5: f_day = "금요일";
+            break;
+            case 6: f_day = "토요일";
+            break;
+        }
+        document.write(d_year,"년"," ",d_month+1,"월"," ",d_date,"일"," ",f_day,"<br>");
+
+        var today = new Date();
+        var d_year2 = today.getFullYear();
+        var d_month2 = today.getMonth();
+        var d_date2 = today.getDate() ;
+        var now_day2 = today.getDay();
+        var f_day2;
+        switch(now_day2){
+            case 0: f_day2 = "일요일";
+            break;
+            case 1: f_day2 = "월요일";
+            break;
+            case 2: f_day2 = "화요일";
+            break;
+            case 3: f_day2 = "수요일";
+            break;
+            case 4: f_day2 = "목요일";
+            break;
+            case 5: f_day2 = "금요일";
+            break;
+            case 6: f_day2 = "토요일";
+            break;
+        }
+        document.write(d_year2,"년"," ",d_month2+1,"월"," ",d_date2,"일"," ",f_day2,"<br>");
+        //현재날짜까지 몇일 몇시간 몇분 몇초가 남았는지 출력하시오.
+        var diffDate = d_day.getTime() - today.getTime();
+        var result = Math.floor(diffDate/(1000*60*60*24));
+        var na = diffDate%(1000*60*60*24);
+        
+        var result2 = Math.floor(na/(1000*60*60));
+        var na2 = na%(1000*60*60);
+        
+        var result3 = Math.floor(na2/(1000*60));
+        var na3 = na2%(1000*60);
+        
+        var result4 = Math.floor(na3/1000);
+        var na4 = na3%1000;
+        document.write("현재 남은 시간 : ",result,"일",result2,"시간",result3,"분",result4,"초","<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
