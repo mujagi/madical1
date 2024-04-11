@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //두 수를 입력받아, 사칙연산을 해서 리턴 받은 후 출력하시오.
+        
+        var arr_result =[];
+        function result(num1,num2){
+            var p = num1+num2;
+            var m = num1-num2;
+            var x = num1*num2;
+            var f = num1/num2;
+            arr_result.push(p);
+            arr_result.push(m);
+            arr_result.push(x);
+            arr_result.push(f);
+        }
+        num1=Number(prompt("첫번째 수를 입력하시오"));
+        num2=Number(prompt("두번째 수를 입력하시오"));
+
+        result(num1,num2);
+        document.write("결과값 : ",arr_result,"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
