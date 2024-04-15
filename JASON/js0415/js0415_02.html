@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        #mbtn{display: block; width: 120px; height: 30px; margin: 20px auto;}
+    </style>
+    <script>
+        $(function(){
+            $('#mbtn').on({
+                "mouseover focus":function(){
+                    console.log($("#num1").val());
+                    console.log($("#num2").val());
+                    let sum = Number($("#num1").val())+Number($("#num2").val());
+                    $("#main").text(result);
+                },
+                "mouseout blur":function(){
+                    $("#main").text("");
+                }
+            })
+
+        });
+    </script>
+    
+</head>
+<body>
+   <div id="main">0</div> 
+   <input type="text" name="num1" id="num1">+<input type="text" name="num2" id="num2">
+   <br>
+   <button id="mbtn">확인</button>
+</body>
+</html>
