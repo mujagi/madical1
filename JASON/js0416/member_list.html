@@ -3,55 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>관광사진정보리스트</title>
+  <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/notice_list.css">
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script>
     $(function(){
       $("#mbtn").click(function(){
-        ///관광사진 갤러리 목록 조회
-        let item_num =10;
-        let gal_search = $("#gal_search").val();
-        alert("#item_num");
+        //alert("test");
         $.ajax({
-          url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=mLkrtLTDhyoDx6NwQykQZVfcR3F9kIMAI70WGjYRqNJ2uGezAcBS%2FyCYK8UinPOti9Fvw%2BXruLYoNYdoYVtj7g%3D%3D&numOfRows="+item_num+"&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
+          url:"http://127.0.0.1:5500/JASON/js0416/json/member.json",
           type:"get",
           data:{},
           dataType:"json",
           success:function(data){
-            alert("데이터 가져오기 성공")
-            console.log(data.response.body.items);
-            console.log(data.response.body.items.item[0]);
-
-            let item_data = data.response.body.items.item;
-            
+            alert("성공");
+            console.log(data);
             let htmlData = "";
-            for(let i=0;i<item_data.length;i++){
-              htmlData += "<tr>" ;  
-                htmlData += "<td>"+item_data[i].galContentTypeId+"</td>" ;  
-                htmlData += "<td>"+item_data[i].galTitle+"</td>" ;  
-                htmlData += "<td>"+item_data[i].galPhotographyMonth+"</td>" ;  
-                htmlData += "<td>"+item_data[i].galPhotographyLocation+"</td>" ;  
-                htmlData += "<td>"+item_data[i].galWebImageUrl+"</td>" ;  
-                htmlData += "<td>" ;  
-                htmlData += "<img src='"+item_data[i].galWebImageUrl+"' style='width:40px;'>" ;  
-                htmlData += "<td>" ;  
-                htmlData += "<tr>" ;  
-              }
-              
-              $("tbody").html(htmlData); //100개 회원정보 추가
-              
-              
-            },
-            error:function(){
-            alert("ajax실패");
+            for(let i=0;i<data.length;i++){
+              htmlData += "<tr>";
+              htmlData += "<td>"+data[i].no+"</td>";
+              htmlData += "<td>"+data[i].id+"</td>";
+              htmlData += "<td>"+data[i].pw+"</td>";
+              htmlData += "<td>"+data[i].gender+"</td>";
+              htmlData += "<td>"+data[i].tel+"</td>";
+              htmlData += "<td>"+data[i].email+"</td>";
+              htmlData += "</tr>"; 
+            };
+            $("tbody").html(htmlData);
+          },error:function(){
+            alert("실패");
           }
-        })
+
+        });//ajax
       });
-    });
+      
+    });//jquery
   </script>
   <style>
     #mbtn{cursor: pointer;}
@@ -95,15 +84,15 @@
   <section>
     <h1>회원정보리스트</h1>
     <div class="wrapper">
-      <form action="#" name="search" method="post">
+      <form action="/search" name="search" method="post">
         <select name="category" id="category">
           <option value="0">전체</option>
-          <option value="galtitle">촬영장소</option>
-          <option value="galPhotographyMonth">촬영일</option>
+          <option value="title">제목</option>
+          <option value="content">내용</option>
         </select>
 
         <div class="title">
-          <input type="text" size="16" id="gal_search">
+          <input type="text" size="16">
         </div>
   
         <button type="button" id="mbtn"><i class="fas fa-search"></i></button>
@@ -114,29 +103,29 @@
       <colgroup>
         <col width="10%">
         <col width="20%">
-        <col width="10%">
+        <col width="15%">
+        <col width="15%">
         <col width="20%">
-        <col width="30%">
-        <col width="10%">
+        <col width="20%">
       </colgroup>
       <thead>
         <tr>
-          <th>No.</th>
-          <th>제목</th>
-          <th>촬영일자</th>
-          <th>촬영장소</th>
-          <th>이미지위치</th>
-          <th>썸네일</th>
+          <th>번호</th>
+          <th>아이디</th>
+          <th>비밀번호</th>
+          <th>성별</th>
+          <th>전화번호</th>
+          <th>이메일</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td>치악산국립공원</td>
-          <td>202402</td>
-          <td>강원특별자치도 원주시 소초면</td>
-          <td>http://tong.visitkorea.or.kr/cms2/website/74/3108474.jpg</td>
-          <td><img src="http://tong.visitkorea.or.kr/cms2/website/74/3108474.jpg" style="width:30px;"></td>
+          <td>Brady</td>
+          <td>9676</td>
+          <td>Male</td>
+          <td>520-266-7078</td>
+          <td>bpioli0@yellowbook.com</td>
         </tr>
       </tbody>
     </table>

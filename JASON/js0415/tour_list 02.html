@@ -11,13 +11,14 @@
   <link rel="stylesheet" href="css/notice_list.css">
   <script>
     $(function(){
+      //관광사진갤러리 키워드 검색 조회
       $("#mbtn").click(function(){
-        ///관광사진 갤러리 목록 조회
         let item_num =10;
         let gal_search = $("#gal_search").val();
         alert("#item_num");
         $.ajax({
-          url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=mLkrtLTDhyoDx6NwQykQZVfcR3F9kIMAI70WGjYRqNJ2uGezAcBS%2FyCYK8UinPOti9Fvw%2BXruLYoNYdoYVtj7g%3D%3D&numOfRows="+item_num+"&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
+          //url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=mLkrtLTDhyoDx6NwQykQZVfcR3F9kIMAI70WGjYRqNJ2uGezAcBS%2FyCYK8UinPOti9Fvw%2BXruLYoNYdoYVtj7g%3D%3D&numOfRows="+item_num+"&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
+          url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?serviceKey=mLkrtLTDhyoDx6NwQykQZVfcR3F9kIMAI70WGjYRqNJ2uGezAcBS%2FyCYK8UinPOti9Fvw%2BXruLYoNYdoYVtj7g%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&keyword="+gal_search+"&_type=json",
           type:"get",
           data:{},
           dataType:"json",
